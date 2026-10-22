@@ -9,7 +9,7 @@ export default defineConfig({
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },
   // porta do servidor local: o sistema abre em http://localhost:6240
-  server: { port: 6240, host: true },
+  server: { port: 6240 },
   preview: { port: 6241 },
   build: {
     chunkSizeWarningLimit: 1600,

@@ -238,7 +238,7 @@ Faça os apartamentos do último andar aparecerem com um selo "Cobertura".
 | O que aconteceu | O que fazer |
 |---|---|
 | "node: command not found" ou "node não é reconhecido" | O Node.js não está instalado ou o computador ainda não reconheceu. Instale (passo 2.1), feche e abra o aplicativo Claude e tente de novo. |
-| "Port 6240 is already in use" (porta ocupada) | O sistema já está rodando em outra janela. Peça: `Feche o servidor que está usando a porta 6240 e rode de novo.` |
+| O endereço mudou para 6241 ou 6242 | A porta 6240 já estava em uso (talvez o sistema já esteja aberto em outra janela). Sem problema: use o endereço que o Claude informar. |
 | A página abre, mas o prédio não aparece | O navegador pode estar sem aceleração 3D (WebGL). Teste no Chrome ou no Edge atualizados. A tabela continua funcionando. |
 | Mudei o arquivo e nada aconteceu | Confira se o servidor está rodando e se o arquivo foi salvo. Recarregue a página. |
 | Apareceu um erro vermelho na tela | Copie o texto do erro, cole na conversa e peça: `Apareceu este erro, conserte e me explique o que era.` |
