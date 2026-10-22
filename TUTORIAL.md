@@ -61,11 +61,21 @@ O aplicativo já traz o Claude Code dentro, na aba **Code**. Não é preciso ins
 
 ## 3. Baixar o código pelo GitHub
 
-1. Abra a página do projeto no GitHub (o link está na página de entrega do kit).
+Você tem dois caminhos. Os dois entregam o mesmo projeto.
+
+**Pela página de acesso do kit (mais simples)**
+
+1. Na página que abriu depois do cadastro, clique em **Baixar ZIP**.
+2. Abra o arquivo baixado (clique duas vezes). Vai aparecer a pasta `wilsouza-imobiliaria-3d-starter`.
+
+**Pelo GitHub**
+
+1. Abra a página do projeto no GitHub (o link também está na página de acesso).
 2. Clique no botão verde **Code**.
 3. Clique em **Download ZIP**.
-4. Abra o arquivo baixado (clique duas vezes). Vai aparecer uma pasta chamada `wilsouza-imobiliaria-3d-starter-main`.
-5. Mova essa pasta para um lugar fácil de achar, como **Documentos**.
+4. Abra o arquivo baixado. A pasta vai se chamar `wilsouza-imobiliaria-3d-starter-main`.
+
+Depois, nos dois casos, mova a pasta para um lugar fácil de achar, como **Documentos**.
 
 Dica: se quiser, renomeie a pasta para `meu-predio-3d`. O nome da pasta não muda nada no sistema.
 
@@ -77,7 +87,7 @@ Dica: se quiser, renomeie a pasta para `meu-predio-3d`. O nome da pasta não mud
 2. Clique na aba **Code**, no alto da barra lateral.
 3. Embaixo da caixa de mensagem, no seletor de ambiente, escolha a opção **Local** (seu computador).
 4. Clique no seletor de pasta ao lado e escolha **Open folder…** (Abrir pasta).
-5. Selecione a pasta do projeto que você moveu para Documentos.
+5. Selecione a pasta do projeto que você moveu para Documentos (a pasta que tem o arquivo `package.json` dentro).
 
 Pronto: o Claude agora "enxerga" os arquivos do projeto. Este projeto tem um arquivo chamado `CLAUDE.md` com instruções para a IA falar com você de forma simples, em português.
 
