@@ -1,6 +1,6 @@
 # Tabela Imobiliária 3D · Starter Kit
 
-**Criado por [WilSouza.ai](https://wilsouza.com)**
+**Criado por [WilSouza.ai](https://wilsouza.com)** · **[Ver a demonstração online](https://tabela3d.wilsouza.com)** · **[Página do kit](https://kit.wilsouza.com)**
 
 Uma tabela de vendas imobiliária em que o prédio é a interface. Você gira o edifício em 3D, vê na fachada quais apartamentos estão disponíveis, reservados ou vendidos, clica em uma unidade e a tabela ao lado acompanha. É um projeto real, com código aberto, feito com inteligência artificial (Claude Code) para você estudar, rodar no seu computador e modificar, mesmo sem saber programar.
 
