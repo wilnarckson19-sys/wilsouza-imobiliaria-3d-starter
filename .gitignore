@@ -1,0 +1,15 @@
+# dependências instaladas pelo npm (são baixadas de novo com "npm install")
+node_modules/
+
+# versão pronta para publicar (gerada por "npm run build")
+dist/
+
+# arquivos de ambiente com segredos (este projeto não precisa de nenhum)
+.env
+.env.local
+.env.*.local
+
+# registros e arquivos do sistema
+*.log
+.DS_Store
+.vercel
