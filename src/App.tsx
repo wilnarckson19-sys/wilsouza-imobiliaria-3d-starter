@@ -23,6 +23,8 @@ export default function App() {
   const mobile = width < 760
   const compactTable = width < 1180
   const mainWidth = width - (mobile ? 0 : compactTable ? 340 : 430)
+  // área do 3D estreita: controles descem para uma linha própria e a dica some
+  const stacked = mobile || mainWidth < 900
   const [gl] = useState(hasWebGL)
   const pronto = useStore((s) => s.pronto)
   const selecionado = useStore((s) => s.selecionado)
@@ -63,9 +65,9 @@ export default function App() {
           <div className={`absolute flex flex-col gap-2.5 ${mobile ? 'inset-x-3 top-3' : 'top-5 right-5 left-5'}`}>
             <div className="flex items-start justify-between gap-3">
               <Brand compact={mobile} />
-              {!mobile && <Controls labels={mainWidth > 1180} />}
+              {!stacked && <Controls labels={mainWidth > 1180} />}
             </div>
-            {mobile && <Controls labels={false} />}
+            {stacked && <Controls labels={false} />}
           </div>
 
           {!mobile && (
@@ -84,12 +86,14 @@ export default function App() {
             </AnimatePresence>
           )}
 
-          <div className={`absolute inset-x-0 flex justify-center px-3 ${mobile ? 'bottom-[96px]' : 'bottom-6'}`}>
-            <Hint />
-          </div>
+          {(mobile || !stacked) && (
+            <div className={`absolute inset-x-0 flex justify-center px-3 ${mobile ? 'bottom-[96px]' : 'bottom-6'}`}>
+              <Hint />
+            </div>
+          )}
 
           {!(mobile && selecionado) && (
-            <div className={`absolute ${mobile ? 'top-[124px] right-3' : 'right-5 bottom-5'}`}>
+            <div className={`absolute ${mobile ? 'top-[124px] right-3' : stacked ? 'top-[136px] right-5' : 'right-5 bottom-5'}`}>
               <Credit />
             </div>
           )}

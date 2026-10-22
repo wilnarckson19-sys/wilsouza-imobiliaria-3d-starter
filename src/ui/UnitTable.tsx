@@ -50,7 +50,7 @@ export function UnitTable({ compact = false, onClose }: { compact?: boolean; onC
       {label} <ArrowDownUp size={10} className="opacity-60" />
     </button>
   )
-  const cols = compact ? 'grid-cols-[1.1fr_1fr_1.3fr_1.1fr]' : 'grid-cols-[1.05fr_1fr_0.55fr_1.3fr_1.15fr]'
+  const cols = compact ? 'grid-cols-[0.9fr_1.15fr_1.25fr_1.15fr]' : 'grid-cols-[1.05fr_1fr_0.55fr_1.3fr_1.15fr]'
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -70,19 +70,21 @@ export function UnitTable({ compact = false, onClose }: { compact?: boolean; onC
           )}
         </div>
 
-        <div className="mt-4 grid grid-cols-4 gap-1 rounded-2xl border border-white/8 bg-white/[0.03] p-1">
+        <div className={`mt-4 grid gap-1 rounded-2xl border border-white/8 bg-white/[0.03] p-1 ${compact ? 'grid-cols-2' : 'grid-cols-4'}`}>
           {(['todos', 'disponivel', 'reservado', 'vendido'] as Filtro[]).map((f) => (
             <button
               key={f}
               onClick={() => set({ filtro: f })}
               aria-pressed={filtro === f}
-              className={`min-w-0 rounded-xl py-1.5 text-left transition ${compact ? 'px-1.5' : 'px-2'} ${filtro === f ? 'bg-white text-ink' : 'text-muted hover:bg-white/5 hover:text-text'}`}
+              className={`min-w-0 rounded-xl py-1.5 text-left transition ${compact ? 'flex items-center justify-between gap-2 px-2.5' : 'px-2'} ${
+                filtro === f ? 'bg-white text-ink' : 'text-muted hover:bg-white/5 hover:text-text'
+              }`}
             >
-              <span className={`flex items-center truncate font-semibold ${compact ? 'gap-1 text-[10px]' : 'gap-1.5 text-[11px]'}`}>
+              <span className={`flex items-center gap-1.5 truncate font-semibold ${compact ? 'text-[11px]' : 'text-[10.5px]'}`}>
                 {f !== 'todos' && <StatusDot status={f as Status} size={6} />}
                 {f === 'todos' ? 'Todos' : STATUS_PLURAL[f as Status]}
               </span>
-              <span className="num display block text-[16px] leading-tight font-semibold">{f === 'todos' ? c.total : c[f as Status]}</span>
+              <span className={`num display block font-semibold ${compact ? 'text-[14px]' : 'text-[16px] leading-tight'}`}>{f === 'todos' ? c.total : c[f as Status]}</span>
             </button>
           ))}
         </div>
@@ -140,9 +142,9 @@ export function UnitTable({ compact = false, onClose }: { compact?: boolean; onC
                 <span className="display block text-[16px] leading-tight font-semibold">{a.numero}</span>
                 <span className="block text-[11px] text-faint">{andarLongo(a.andar)}</span>
               </span>
-              <span className="num text-muted">{metros(a.area)}</span>
+              <span className="num whitespace-nowrap text-muted">{metros(a.area)}</span>
               {!compact && <span className="num text-muted">{a.quartos}</span>}
-              <span className="num text-right font-semibold" style={a.status === 'vendido' ? { color: 'var(--color-faint)' } : undefined}>
+              <span className="num text-right font-semibold whitespace-nowrap" style={a.status === 'vendido' ? { color: 'var(--color-faint)' } : undefined}>
                 {compact ? dinheiroCurto(a.valor) : dinheiro(a.valor).replace(/,00$/, '')}
               </span>
               <span className="flex justify-end">
